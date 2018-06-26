@@ -1,7 +1,7 @@
 #!/bin/bash
 ##  nuM2nu.sh
 ##  by: Charlie Payne
-##  last updated: May 22 2018
+##  last updated: June 26 2018
 ## DESCRIPTION
 ##  this script will automatically run nushellx and/or nutbar for an M2nu calculation
 ##  it will pull the relevant Gamow-Teller operator information from an IMSRG evolution that has already been run
@@ -532,6 +532,7 @@ then
   cp $imaout/$intfile $imaout/$spfile $nudirKgs
   cp $imaout/$intfile $imaout/$spfile $nudirF
 elif [ $s123run != $s123off ] && [ $flow != 'BARE' ] && [ $ormanual != $or1 ]
+then
   echo 'ERROR 0610: cannot find the needed files for nushellx!'
   echo "spfile  = $spfile"
   echo "intfile = $intfile"
