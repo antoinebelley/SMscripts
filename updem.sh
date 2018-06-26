@@ -16,15 +16,15 @@ then
   sed -i "48s/nth=12/nth=32/" goM0nu.sh
   sed -i "48s/\[1,12\],/\[1,32\],/" goM0nu.sh
   # nuM2nu.sh
-  sed -i "49s/que=batchmpi/que=oak     /" nuM2nu.sh
-  sed -i "50s/wall=144/wall=384/" nuM2nu.sh
-  sed -i "50s/\[1,192]/\[1,512\]/" nuM2nu.sh
-  sed -i "51s/ppn=12/ppn=32/" nuM2nu.sh
-  sed -i "51s/\[1,12\],/\[1,32\],/" nuM2nu.sh
-  sed -i "52s/vmem=60 /vmem=251/" nuM2nu.sh
-  sed -i "52s/\[1,60\], /\[1,251\],/" nuM2nu.sh
-  sed -i "53s/nth=12/nth=32/" nuM2nu.sh
-  sed -i "53s/\[1,12\],/\[1,32\],/" nuM2nu.sh
+  sed -i "50s/que=batchmpi/que=oak     /" nuM2nu.sh
+  sed -i "51s/wall=144/wall=384/" nuM2nu.sh
+  sed -i "51s/\[1,192]/\[1,512\]/" nuM2nu.sh
+  sed -i "52s/ppn=12/ppn=32/" nuM2nu.sh
+  sed -i "52s/\[1,12\],/\[1,32\],/" nuM2nu.sh
+  sed -i "53s/vmem=60 /vmem=251/" nuM2nu.sh
+  sed -i "53s/\[1,60\], /\[1,251\],/" nuM2nu.sh
+  sed -i "54s/nth=12/nth=32/" nuM2nu.sh
+  sed -i "54s/\[1,12\],/\[1,32\],/" nuM2nu.sh
   # nuqsub.sh
   sed -i "17s/myqtag='cougar'/myqtag='login1'/" nuqsub.sh
   sed -i "18s/myqidlength='6'/myqidlength='4'/" nuqsub.sh
