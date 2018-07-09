@@ -1,12 +1,13 @@
-intlabel=new_magic
+intlabel=magic
 BB=3N
-ARRemax=("4")
+ARRemax=("10")
 ARRhw=("16")
 Z=20
 A=48
-date=180201
+date=180609
 gfile=goM0nuGroup.sh
-line="MAGNUS IMSRGfp magic magic"
+preopt=''
+line='MAGNUS IMSRGfp magic magic'
 
 Zbar=zzzzz
 rm -f $gfile
@@ -36,9 +37,15 @@ do
     then
       Tbar=$Zbar
     fi
-    echo "./goM0nu.sh ${Z} ${A} ${line} ${emax} ${hw} s12 ${GTbar} ${Fbar} ${Tbar}"
+    if [ ! -z "$preopt" ]
+    then
+      MYRUN="./goM0nu.sh ${preopt} ${Z} ${A} ${line} ${emax} ${hw} s12 ${GTbar} ${Fbar} ${Tbar}"
+    else
+      MYRUN="./goM0nu.sh ${Z} ${A} ${line} ${emax} ${hw} s12 ${GTbar} ${Fbar} ${Tbar}"
+    fi
+    echo "$MYRUN"
     echo "sleep 2" >> $gfile
-    echo "./goM0nu.sh ${Z} ${A} ${line} ${emax} ${hw} s12 ${GTbar} ${Fbar} ${Tbar}" >> $gfile
+    echo "$MYRUN" >> $gfile
   done
 done
 chmod 755 $gfile
