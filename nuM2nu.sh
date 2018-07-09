@@ -1,7 +1,7 @@
 #!/bin/bash
 ##  nuM2nu.sh
 ##  by: Charlie Payne
-##  last updated: June 26 2018
+##  copyright (c): 2016-2018
 ## DESCRIPTION
 ##  this script will automatically run nushellx and/or nutbar for an M2nu calculation
 ##  it will pull the relevant Gamow-Teller operator information from an IMSRG evolution that has already been run

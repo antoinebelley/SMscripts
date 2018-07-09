@@ -1,6 +1,6 @@
 #!/bin/bash
 # by: Charlie Payne
-# last updated: May 13 2018
+# copyright (c): 2016-2018
 # files that use these: $IMASMS/sumM2nu.sh, $IMASMS/zscripts/zMEC.sh, $IMAMYR/zcompilerresults.sh
 
 myl=${1}

@@ -4,7 +4,7 @@
 ## it will put the output in the $PWD from which the script is called
 ## if argumement ${9} is not empty, then this qsubbed job will wait on H until the job in ${9} has finished
 ## by: Charlie Payne
-## last updated: Spring 2018
+## copyright (c): 2016-2018
 mycmd=${1}        # the terminal execution command, eg) for nushellx it is like '. ca48.bat' and for nutbar it is 'nutbar nutbar_ca480.input'
 myrun=${2}        # the run name, eg) for nushellx it is the basename of *.ans and for nutbar it is the basename of *.input
 mybarcode=${3}    # an additional barcode to make the run name more unqiue in the qsub (if undesired then enter 'off')

@@ -1,7 +1,7 @@
 #!/bin/bash
 ##  goM0nu.sh
 ##  by: Charlie Payne
-##  last updated: June 26 2018
+##  copyright (c): 2016-2018
 ## DESCRIPTION
 ##  this script will automatically run nushellx and/or nutbar for an M0nu NME calculation
 ##  it will pull the relevant 0vbb operator information from an IMSRG evolution that has already been run

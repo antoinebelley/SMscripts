@@ -6,7 +6,7 @@
 ## NOTE: you must add in the relevant $Eshift and $EXP to "the $Eshift/$EXP if-else ladder" below
 ## all output files are saved in $nucI/$mydir/$outdir, as set below
 ## by: Charlie Payne
-## last updated: May 14 2018
+## copyright (c): 2016-2018
 ZI=${1}         # atomic (proton) number of the initial nucleus (I)
 A=${2}          # mass number of the decay
 mydir=${3}      # the directory holding $nutfileK and $nutfileF, as set below
