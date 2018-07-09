@@ -698,48 +698,51 @@ outfileT=nutbar_tensor0_${nucF}0_${Tbar}.dat
 if [ $GTbar != $Zbar ] || [ $Fbar != $Zbar ] || [ $Tbar != $Zbar ]
 then
   rm -f $mycpsh # just in case it already exists
+  echo "SCRDIR=$basedir" >> $mycpsh
+  echo "THEDIR=$mydir" >> $mycpsh
+  echo "RESDIR=$imamyr" >> $mycpsh
   if [ $GTbar != $Zbar ]
   then
-    echo "mv $basedir/$mydir/$GTdir/$outfile $basedir/$mydir/$GTdir/$outfileGT 2>/dev/null" >> $mycpsh
+    echo "mv \$SCRDIR/\$THEDIR/$GTdir/$outfile \$SCRDIR/\$THEDIR/$GTdir/$outfileGT 2>/dev/null" >> $mycpsh
   fi
   if [ $Fbar != $Zbar ]
   then
-    echo "mv $basedir/$mydir/$Fdir/$outfile $basedir/$mydir/$Fdir/$outfileF 2>/dev/null" >> $mycpsh
+    echo "mv \$SCRDIR/\$THEDIR/$Fdir/$outfile \$SCRDIR/\$THEDIR/$Fdir/$outfileF 2>/dev/null" >> $mycpsh
   fi
   if [ $Tbar != $Zbar ]
   then
-    echo "mv $basedir/$mydir/$Tdir/$outfile $basedir/$mydir/$Tdir/$outfileT 2>/dev/null" >> $mycpsh
+    echo "mv \$SCRDIR/\$THEDIR/$Tdir/$outfile \$SCRDIR/\$THEDIR/$Tdir/$outfileT 2>/dev/null" >> $mycpsh
   fi
-  echo "cd $imamyr" >> $mycpsh
+  echo "cd \$RESDIR" >> $mycpsh
   echo "mkdir -p M0nu" >> $mycpsh
   echo 'cd M0nu' >> $mycpsh
   echo "mkdir -p $nucI" >> $mycpsh
   echo "cd $nucI" >> $mycpsh
-  echo "mkdir -p $mydir" >> $mycpsh
+  echo "mkdir -p \$THEDIR" >> $mycpsh
   echo "cd $mydir" >> $mycpsh
   if [ $GTbar != $Zbar ]
   then
     echo "mkdir -p $GTdir" >> $mycpsh
-    echo "cp $basedir/$mydir/$GTdir/${nucI}*.lpt $GTdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$GTdir/${nucF}*.lpt $GTdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$GTdir/$outfileGT $GTdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$GTheader . 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$GTdir/${nucI}*.lpt $GTdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$GTdir/${nucF}*.lpt $GTdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$GTdir/$outfileGT $GTdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$GTheader . 2>/dev/null" >> $mycpsh
   fi
   if [ $Fbar != $Zbar ]
   then
     echo "mkdir -p $Fdir" >> $mycpsh
-    echo "cp $basedir/$mydir/$Fdir/${nucI}*.lpt $Fdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Fdir/${nucF}*.lpt $Fdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Fdir/$outfileF $Fdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Fheader . 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Fdir/${nucI}*.lpt $Fdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Fdir/${nucF}*.lpt $Fdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Fdir/$outfileF $Fdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Fheader . 2>/dev/null" >> $mycpsh
   fi
   if [ $Tbar != $Zbar ]
   then
     echo "mkdir -p $Tdir" >> $mycpsh
-    echo "cp $basedir/$mydir/$Tdir/${nucI}*.lpt $Tdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Tdir/${nucF}*.lpt $Tdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Tdir/$outfileT $Tdir 2>/dev/null" >> $mycpsh
-    echo "cp $basedir/$mydir/$Theader . 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Tdir/${nucI}*.lpt $Tdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Tdir/${nucF}*.lpt $Tdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Tdir/$outfileT $Tdir 2>/dev/null" >> $mycpsh
+    echo "cp \$SCRDIR/\$THEDIR/$Theader . 2>/dev/null" >> $mycpsh
   fi
   chmod 755 $mycpsh # make it executable from shell
 fi
