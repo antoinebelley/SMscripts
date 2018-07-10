@@ -26,7 +26,7 @@ do
   if [ -z $Fbar ]
   then
     Fbar=$Zbar
-  fi  
+  fi
   Tbar=$(ls *${intlabel}*${BB}*e${emax}*hw${hw}*A${A}*_T_*${date}*.int)
   Tbar=${Tbar#*T_}
   Tbar=${Tbar%??????????.int}

@@ -77,7 +77,7 @@ append0(){
 # do out the starting stuff
 GT1bfile=${GTfile}_1b.op
 GT2bfile=${GTfile}_2b.op
-MEC1bfile=${MECfile}_1b.op 
+MEC1bfile=${MECfile}_1b.op
 MEC2bfile=${MECfile}_2b.op
 FULL1bfile=${basename}_GTFULL # this will contain the result (1b)
 FULL2bfile=${basename}_GTFULL # " " " " " (2b)

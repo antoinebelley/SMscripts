@@ -1,10 +1,10 @@
 intlabel=magic
 BB=3N
-ARRemax=("10")
-ARRhw=("16")
+ARRemax=("10" "12")
+ARRhw=("16" "24")
 Z=20
 A=48
-date=180609
+date=180710
 gfile=goM0nuGroup.sh
 preopt=''
 line='MAGNUS IMSRGfp magic magic'
@@ -29,7 +29,7 @@ do
     if [ -z $Fbar ]
     then
       Fbar=$Zbar
-    fi  
+    fi
     Tbar=$(ls *${intlabel}*${BB}*e${emax}*hw${hw}*A${A}*_T_*${date}*.int)
     Tbar=${Tbar#*T_}
     Tbar=${Tbar%??????????.int}

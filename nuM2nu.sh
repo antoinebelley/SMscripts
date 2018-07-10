@@ -121,22 +121,21 @@ neigK=${11}    # the number of eigenstates to create for summing over the K exci
 
 
 # parse the input
-if [ $override = $oron ]
+if [ -z $override ]
+then
+  override='off'
+elif [ $override = $oron ]
 then
   echo
   echo "switching flow from '$flow' to 'HYBRID' (just accept it)..."
   echo
   flow='HYBRID' # if you remove this, you'll get what you deserve...
-fi
-if [ -z $override ]
-then
-  override='off'
-elif [ $override = $oron ] && [ $extra ]
-then
-  extra="override_${extra}"
-elif [ $override = $oron ] && [ -z $extra ]
-then
-  extra='override'
+  if [ -z $extra ]
+  then
+    extra='override'
+  else
+    extra="override_${extra}"
+  fi
 fi
 if [ -z $mecopt ]
 then
@@ -459,7 +458,7 @@ then
   echo -n "the *.int file is:   "
   ls $intfile
   echo -n "the *.sp file is:    "
-  ls $spfile  
+  ls $spfile
 fi
 echo -n "the *1b.op file is:  "
 ls $GT1bfile
@@ -711,7 +710,7 @@ then
   echo "s2id(ngs) = $s2id"
   echo
   cd ..
-  
+
   # now we'll calculate the J=${sesJK} excitation energies
   cd $nudirK
   rm -f $nucKans # just in case it already exists

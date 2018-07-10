@@ -114,22 +114,21 @@ Tbar=${12}     # " " " " " " T " " " ", " " " " " " " "
 
 
 # parse the input
-if [ $override = $oron ]
+if [ -z $override ]
+then
+  override='off'
+elif [ $override = $oron ]
 then
   echo
   echo "switching flow from '$flow' to 'HYBRID' (just accept it)..."
   echo
   flow='HYBRID' # if you remove this, you'll get what you deserve...
-fi
-if [ -z $override ]
-then
-  override='off'
-elif [ $override = $oron ] && [ $extra ]
-then
-  extra="override_${extra}"
-elif [ $override = $oron ] && [ -z $extra ]
-then
-  extra='override'
+  if [ -z $extra ]
+  then
+    extra='override'
+  else
+    extra="override_${extra}"
+  fi
 fi
 ZF=$(($ZI+2)) # atomic (proton) number of the final nucleus (F)
 if [ $ZF -gt 62 ]
