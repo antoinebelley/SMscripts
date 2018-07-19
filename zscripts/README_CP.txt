@@ -11,7 +11,7 @@ zheader.sh
     This script removes a specified string of characters from all the existing M0nu header files in the output directory.
     NOTE: editting these header files should be taken with significant precaution!
 
-zlsit.sh
+zlist.sh
     This script lists all the files from the most recent runs from imsrg++ to the output directory.
     It's a good way to check whether or not imsrg++ has output everything you need; i.e., if only the header is listed, then said run isn't done or something failed.
     It is dependant on the maintinance of "M0nu_header_ZzzzzNEW.txt" - see ./zrecordit.sh described below.
