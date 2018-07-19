@@ -57,7 +57,7 @@ tagit='IMSRG'            # a tag for the symlinks below
 catch='forM2nu'          # acts as a descriptor to help find the GT operator in $imaout, see $filebase below
 catchGT='GamowTeller'    # " " " " " " " " " " " ", " " " (without MECs)
 catchMEC='GTFULL'        # " " " " " " " " " " " ", " " " (with MECs)
-imaout=$IMAOOO           # this must point to where the IMSRG output files live
+imaout=$IMAOUT           # this must point to where the IMSRG output files live
 imasms=$IMASMS           # " " " " " " nuqsub.sh script lives
 imamyr=$IMAMYR           # " " " " " " final results may be copied to
 mecon='MEC'
@@ -78,8 +78,8 @@ do
     u) # -u for "usage": see script usage
       myUsage 1;;
     h) # -h for "help": less the relevant documentation and see script usage
-      sed -n '29,49p; 50q' $imasms/README_CP.txt | less
-      sed -n '2,40p; 41q' $imasms/nuM2nu.sh | less
+      sed -n '29,49p; 50q' $imasms/README_CP.txt | command less
+      sed -n '2,40p; 41q' $imasms/nuM2nu.sh | command less
       myUsage 2
       ;;
     m) # -m for "MECs": find a GT operator with meson exchange currents (MECs)

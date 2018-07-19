@@ -4,9 +4,13 @@ then
   exit 1
 fi
 
+dir0=$IMAWRK/debug_output
 dir1=$IMAWRK/output
-dir2=$IMAWRK/output_to_javier
-dir3=$IMAWRK/debug_output
+dir2=$IMAWRK/output_Ca48
+dir3=$IMAWRK/output_Ge76
+dir4=$IMAWRK/output_Se82
+dir5=$IMAWRK/output_to_javier
+dir6=$IMAWRK/output_to_mihai
 
 zreplace(){
   local dir=${1}
@@ -20,10 +24,15 @@ zreplace(){
     pwd
     rm -f z*.sh
     cp $IMASMS/zscripts/z*.sh .
+    cd $IMASMS/zscripts
   fi
 }
 
 echo 'updating all relevant output directories with zscripts from $IMASMS...'
+zreplace $dir0
 zreplace $dir1
 zreplace $dir2
 zreplace $dir3
+zreplace $dir4
+zreplace $dir5
+zreplace $dir6

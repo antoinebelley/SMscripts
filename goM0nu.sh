@@ -48,7 +48,7 @@ vmem=60         # in [1,60],   memory limit for qsub [GB]
 nth=12          # in [1,12],   number of threads to use
 snoozer=1       # set the sleep time between stages [s]
 tagit='IMSRG'     # a tag for the symlinks below
-imaout=$IMAOOO    # this must point to where the IMSRG output files live
+imaout=$IMAOUT    # this must point to where the IMSRG output files live
 imasms=$IMASMS    # " " " " " " nuqsub.sh script lives
 imamyr=$IMAMYR    # " " " " " " nutbar results may be copied to
 oron='on'
@@ -72,8 +72,8 @@ do
     u) # -u for "usage": see script usage
       myUsage 1;;
     h) # -h for "help": less the relevant documentation and see script usage
-      sed -n '4,27p; 28q' $imasms/README_CP.txt | less
-      sed -n '2,36p; 37q' $imasms/goM0nu.sh | less
+      sed -n '4,27p; 28q' $imasms/README_CP.txt | command less
+      sed -n '2,36p; 37q' $imasms/goM0nu.sh | command less
       myUsage 2
       ;;
     o) # -o <on|1|2> for "override": override the automatic search for *.int and *.sp, giving the user the chance to manually choose them

@@ -13,6 +13,7 @@ zheader.sh
 
 zlsit.sh
     This script lists all the files from the most recent runs from imsrg++ to the output directory.
+    It's a good way to check whether or not imsrg++ has output everything you need; i.e., if only the header is listed, then said run isn't done or something failed.
     It is dependant on the maintinance of "M0nu_header_ZzzzzNEW.txt" - see ./zrecordit.sh described below.
 
 zMEC.sh
