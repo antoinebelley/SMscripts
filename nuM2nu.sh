@@ -158,6 +158,20 @@ s5run=$(echo ${srun:4:1})
 s123run=${s1run}${s2run}${s3run}
 s123off=${runoff}${runoff}${runoff}
 salloff=${runoff}${runoff}${runoff}${runoff}${runoff}
+if ! [[ $A =~ ^[0-9]+$ ]] || [ $A -eq 0 ]
+then
+  echo 'ERROR 0117: A is not a positive integer!'
+  echo "A = $A"
+  echo 'exiting...'
+  exit 1
+fi
+if ! [[ $ZI =~ ^[0-9]+$ ]] || [ $ZI -eq 0 ]
+then
+  echo 'ERROR 2820: ZI is not a positive integer!'
+  echo "ZI = $ZI"
+  echo 'exiting...'
+  exit 1
+fi
 ZK=$(($ZI+1)) # atomic (proton) number of the intermediate nucleus (K)
 ZF=$(($ZI+2)) # " " " " " final " (F)
 if [ $ZF -gt 62 ]

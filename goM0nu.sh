@@ -130,6 +130,20 @@ then
     extra="override_${extra}"
   fi
 fi
+if ! [[ $A =~ ^[0-9]+$ ]] || [ $A -eq 0 ]
+then
+  echo 'ERROR 9113: A is not a positive integer!'
+  echo "A = $A"
+  echo 'exiting...'
+  exit 1
+fi
+if ! [[ $ZI =~ ^[0-9]+$ ]] || [ $ZI -eq 0 ]
+then
+  echo 'ERROR 5190: ZI is not a positive integer!'
+  echo "ZI = $ZI"
+  echo 'exiting...'
+  exit 1
+fi
 ZF=$(($ZI+2)) # atomic (proton) number of the final nucleus (F)
 if [ $ZF -gt 62 ]
 then
