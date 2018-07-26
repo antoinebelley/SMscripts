@@ -1,13 +1,18 @@
 intlabel=magic
+#intlabel=BARE
 BB=3N
+#BB=OS
 ARRemax=("10" "12")
+#ARRemax=("4")
 ARRhw=("16" "24")
+#ARRhw=("10.49")
 Z=20
 A=48
-date=180710
+date=180726
 gfile=goM0nuGroup.sh
 preopt=''
 line='MAGNUS IMSRGfp magic magic'
+#line='BARE fppn gx1apn none'
 
 Zbar=zzzzz
 rm -f $gfile
@@ -17,21 +22,21 @@ do
   for emax in "${ARRemax[@]}"
   do
     GTbar=$(ls *${intlabel}*${BB}*e${emax}*hw${hw}*A${A}*_GT_*${date}*.int)
-    GTbar=${GTbar#*GT_}
+    GTbar=${GTbar#*_GT_}
     GTbar=${GTbar%??????????.int}
     if [ -z $GTbar ]
     then
       GTbar=$Zbar
     fi
     Fbar=$(ls *${intlabel}*${BB}*e${emax}*hw${hw}*A${A}*_F_*${date}*.int)
-    Fbar=${Fbar#*F_}
+    Fbar=${Fbar#*_F_}
     Fbar=${Fbar%??????????.int}
     if [ -z $Fbar ]
     then
       Fbar=$Zbar
     fi
     Tbar=$(ls *${intlabel}*${BB}*e${emax}*hw${hw}*A${A}*_T_*${date}*.int)
-    Tbar=${Tbar#*T_}
+    Tbar=${Tbar#*_T_}
     Tbar=${Tbar%??????????.int}
     if [ -z $Tbar ]
     then
