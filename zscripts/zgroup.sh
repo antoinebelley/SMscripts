@@ -1,18 +1,20 @@
 intlabel=magic
 #intlabel=BARE
 BB=3N
+#BB=HF
 #BB=OS
-ARRemax=("10" "12")
-#ARRemax=("4")
-ARRhw=("16" "24")
+#ARRemax=("10" "12")
+ARRemax=("13")
+ARRhw=("16")
 #ARRhw=("10.49")
 Z=20
 A=48
-date=180726
+date=1808
 gfile=goM0nuGroup.sh
 preopt=''
-line='MAGNUS IMSRGfp magic magic'
-#line='BARE fppn gx1apn none'
+line="MAGNUS IMSRGfp ${intlabel} ${intlabel}"
+#line="HF HFfp ${intlabel} ${intlabel}"
+#line="${intlabel} fppn gx1apn none"
 
 Zbar=zzzzz
 rm -f $gfile

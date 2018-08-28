@@ -6,32 +6,32 @@ elif [ $MYHOST == 'oak.arc.ubc.ca' ]
 then
   echo "I'm on oak! updating SMscripts..."
   # goM0nu.sh
-  sed -i "44s/que=batchmpi/que=oak     /" goM0nu.sh
-  sed -i "45s/wall=144/wall=384/" goM0nu.sh
-  sed -i "45s/\[1,192]/\[1,512\]/" goM0nu.sh
-  sed -i "46s/ppn=12/ppn=32/" goM0nu.sh
-  sed -i "46s/\[1,12\],/\[1,32\],/" goM0nu.sh
-  sed -i "47s/vmem=60 /vmem=251/" goM0nu.sh
-  sed -i "47s/\[1,60\], /\[1,251\],/" goM0nu.sh
-  sed -i "48s/nth=12/nth=32/" goM0nu.sh
-  sed -i "48s/\[1,12\],/\[1,32\],/" goM0nu.sh
+  sed -i "48s/que=batchmpi/que=oak     /" goM0nu.sh
+  sed -i "49s/wall=144/wall=384/" goM0nu.sh
+  sed -i "49s/\[1,192]/\[1,512\]/" goM0nu.sh
+  sed -i "50s/ppn=12/ppn=32/" goM0nu.sh
+  sed -i "50s/\[1,12\],/\[1,32\],/" goM0nu.sh
+  sed -i "51s/vmem=60 /vmem=251/" goM0nu.sh
+  sed -i "51s/\[1,60\], /\[1,251\],/" goM0nu.sh
+  sed -i "52s/nth=12/nth=32/" goM0nu.sh
+  sed -i "52s/\[1,12\],/\[1,32\],/" goM0nu.sh
   # nuM2nu.sh
-  sed -i "50s/que=batchmpi/que=oak     /" nuM2nu.sh
-  sed -i "51s/wall=144/wall=384/" nuM2nu.sh
-  sed -i "51s/\[1,192]/\[1,512\]/" nuM2nu.sh
-  sed -i "52s/ppn=12/ppn=32/" nuM2nu.sh
-  sed -i "52s/\[1,12\],/\[1,32\],/" nuM2nu.sh
-  sed -i "53s/vmem=60 /vmem=251/" nuM2nu.sh
-  sed -i "53s/\[1,60\], /\[1,251\],/" nuM2nu.sh
-  sed -i "54s/nth=12/nth=32/" nuM2nu.sh
-  sed -i "54s/\[1,12\],/\[1,32\],/" nuM2nu.sh
+  sed -i "54s/que=batchmpi/que=oak     /" nuM2nu.sh
+  sed -i "55s/wall=144/wall=384/" nuM2nu.sh
+  sed -i "55s/\[1,192]/\[1,512\]/" nuM2nu.sh
+  sed -i "56s/ppn=12/ppn=32/" nuM2nu.sh
+  sed -i "56s/\[1,12\],/\[1,32\],/" nuM2nu.sh
+  sed -i "57s/vmem=60 /vmem=251/" nuM2nu.sh
+  sed -i "57s/\[1,60\], /\[1,251\],/" nuM2nu.sh
+  sed -i "58s/nth=12/nth=32/" nuM2nu.sh
+  sed -i "58s/\[1,12\],/\[1,32\],/" nuM2nu.sh
   # nuqsub.sh
-  sed -i "17s/myqtag='cougar'/myqtag='login1'/" nuqsub.sh
-  sed -i "18s/myqidlength='6'/myqidlength='4'/" nuqsub.sh
-  sed -i "24s/192/512/" nuqsub.sh
-  sed -i "26s/12/32/" nuqsub.sh
-  sed -i "28s/60/251/" nuqsub.sh
-  sed -i "30s/12/32/" nuqsub.sh
+  sed -i "18s/myqtag='cougar'/myqtag='login1'/" nuqsub.sh
+  sed -i "19s/myqidlength='6'/myqidlength='4'/" nuqsub.sh
+  sed -i "25s/192/512/" nuqsub.sh
+  sed -i "27s/12/32/" nuqsub.sh
+  sed -i "29s/60/251/" nuqsub.sh
+  sed -i "31s/12/32/" nuqsub.sh
 else
   echo 'ERROR: host not recognized'
   echo 'exiting...'

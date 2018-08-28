@@ -1,5 +1,5 @@
-All files/code/etc in this repository obey the following Copyright:
-Copyright (c) Charlie Payne, 2016-2018
+All files/code/etc in this repository obey the LICENSE (GNU GPL v3) with following Copyright:
+Copyright (C) Charlie Payne, 2016-2018
 
 goM0nu.sh
     execution Ex1) ./goM0nu.sh 20 48 BARE fppn gx1apn none 4 10.49 s12 lfpnk cfzwc zzzzz

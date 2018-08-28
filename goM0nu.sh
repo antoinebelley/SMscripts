@@ -1,7 +1,8 @@
 #!/bin/bash
 ##  goM0nu.sh
-##  by: Charlie Payne
-##  copyright (c): 2016-2018
+##  By: Charlie Payne
+##  Copyright (C): 2018
+##  License: see LICENSE (GNU GPL v3)
 ## DESCRIPTION
 ##  this script will automatically run nushellx and/or nutbar for an M0nu NME calculation
 ##  it will pull the relevant 0vbb operator information from an IMSRG evolution that has already been run
@@ -15,6 +16,9 @@
 ##  -u for "usage": see script usage
 ##  -h for "help": less the relevant documentation and see script usage
 ##  -o <on|1|2> for "override": override the automatic search for *.int and *.sp, giving the user the chance to manually choose them
+##    'on' = this will ask the user to use option '1' (use <sp>, <int>, <GTbar>, <Fbar>, <Tbar>) or '2' (reset <sp> and <int> to anything from $imaout)
+##    '1' = option 1, as above (intended for hybrid calculation of: NuShellX wave functions + IMSRG-evolved operator)
+##    '2' = option 2, as above (intended for hybrid calculation of: IMSRG-evolved wave functions + BARE operator)
 ##  -x <string> for "extra": an additional tag for the directory naming
 ## PARAMETERS
 ##  1) ZI=${1}        # atomic (proton) number of the initial nucleus (I)
@@ -34,7 +38,7 @@
 ##  stage 1 = the first nushellx calculation, for the initial nucleus (I)
 ##  stage 2 = the second nushellx calculation, for the final nucleus (F), and submit the symlinks
 ##  stage 3 = the nutbar calculation(s) for the overall M0nu NME(s), and make the results copying script (the latter of which requires running GT, F, and/or T)
-myUsage(){ echo "Usage ${1}: ${0} [-u for usage] [-h for help] [-o <on|1|2>] [-x <string>] <ZI> <A> <FLOW> <sp> <int> <int3N> <emax> <hw> <s1|s2|s12|off> <GTbar> <Fbar> <Tbar>" 1>&2; exit 1; }
+myUsage(){ echo "Usage ${1}: ./`basename ${0}` [-u for usage] [-h for help] [-o <on|1|2>] [-x <string>] <ZI> <A> <FLOW> <sp> <int> <int3N> <emax> <hw> <s1|s2|s12|off> <GTbar> <Fbar> <Tbar>" 1>&2; exit 1; }
 neigI=5       # number of eigenstates for nushellx to calculate for the initial nucelus (I)
 maxJI=6       # maximum total angular momentum of the initial nucleus' state (I)
 delJI=1       # step size for the total angular momentum calculations (I)
@@ -64,6 +68,16 @@ Zid=000000
 
 
 
+# function prototype: given an M0nu barcode, this function will get the corresponding time stamp
+timeit(){
+  local barcode=${1}
+  local timestamp=$(ls ${imaout}/M0nu_header_${barcode}*.txt)
+  timestamp=$(echo ${timestamp#${imaout}/M0nu_header_${barcode}})
+  timestamp=$(echo ${timestamp%.txt})
+  echo $timestamp
+}
+
+
 # pre-parse the script parameters
 ormanual='0' # this gets turned on by the override argument
 while getopts ":uho:x:" myopt # filter the script options
@@ -73,7 +87,7 @@ do
       myUsage 1;;
     h) # -h for "help": less the relevant documentation and see script usage
       sed -n '4,27p; 28q' $imasms/README_CP.txt | command less
-      sed -n '2,36p; 37q' $imasms/goM0nu.sh | command less
+      sed -n '2,40p; 41q' $imasms/goM0nu.sh | command less
       myUsage 2
       ;;
     o) # -o <on|1|2> for "override": override the automatic search for *.int and *.sp, giving the user the chance to manually choose them
@@ -94,7 +108,7 @@ do
       myUsage 4;;
   esac
 done
-shift $((OPTIND - 1)) # this shifts the script parameter number to compensate for those taken into getopts (OPTIND) above
+shift $(($OPTIND-1))
 if [ ${#} -ne 12 ] # check that the right number of script paramters have been filled
 then
   myUsage 5
@@ -223,16 +237,6 @@ then
   echo 'exiting...'
   exit 1
 fi
-
-
-# function prototype: given an M0nu barcode, this function will get the corresponding time stamp
-timeit(){
-  local barcode=${1}
-  local timestamp=$(ls ${imaout}/M0nu_header_${barcode}*.txt)
-  timestamp=$(echo ${timestamp#${imaout}/M0nu_header_${barcode}})
-  timestamp=$(echo ${timestamp%.txt})
-  echo $timestamp
-}
 
 
 

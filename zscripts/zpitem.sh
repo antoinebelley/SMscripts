@@ -5,6 +5,13 @@ then
 fi
 if [ $test = 'true' ]
 then
+  echo
+  echo 'MAKING SAFETY!'
+  cd ..
+  THEDATE=$(date +%y%m%d)
+  tar -zcvf `basename $OLDPWD`_${THEDATE}.tar.gz `basename $OLDPWD`
+  cd $OLDPWD
+  echo
   echo 'START'
   record=M0nu_header_ZzzzzRECORD.txt
   temp=M0nu_header_ZzzzzTEMP.txt # this temp is important...

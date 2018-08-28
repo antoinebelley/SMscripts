@@ -1,6 +1,7 @@
 #!/bin/bash
-# by: Charlie Payne
-# copyright (c): 2016-2018
+##  By: Charlie Payne
+##  Copyright (C): 2016-2018
+##  License: see LICENSE (GNU GPL v3)
 # files that use these: $IMASMS/sumM2nu.sh, $IMASMS/zscripts/zMEC.sh, $IMAMYR/zcompilerresults.sh
 
 myl=${1}
