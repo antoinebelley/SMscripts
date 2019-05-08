@@ -27,7 +27,7 @@ then
   sed -i "58s/\[1,12\],/\[1,32\],/" nuM2nu.sh
   # nuqsub.sh
   sed -i "18s/myqtag='cougar'/myqtag='login1'/" nuqsub.sh
-  sed -i "19s/myqidlength='6'/myqidlength='4'/" nuqsub.sh
+  sed -i "19s/myqidlength='6'/myqidlength='5'/" nuqsub.sh
   sed -i "25s/192/512/" nuqsub.sh
   sed -i "27s/12/32/" nuqsub.sh
   sed -i "29s/60/251/" nuqsub.sh
