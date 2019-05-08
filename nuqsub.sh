@@ -17,7 +17,7 @@ mynth=${8}        # in [1,$mynthmax],   number of threads to use
 pastid=${9}       # a currently running qsub id, or leave it empty
 myqtag='cougar'              # the cluster tag that appears in the job id
 myqidlength='6'              # the number of digits in the job id (this could change over time, keep it update!)
-myemail='cgpayne@triumf.ca'  # this email will receive job completion alerts
+myemail='antoine.belley@mail.mcgill.ca'  # this email will receive job completion alerts
 
 
 # pre-check
